@@ -1,0 +1,134 @@
+from workout_planner.machines import *
+from workout_planner.muscle_groups import *
+
+
+TEST_USER = 'aitan'
+
+USER_DATA = {
+    'aitan': {
+        'spreadsheet_id': '',
+        'pushover_token': '',
+        'pushover_user': '',
+    }
+}
+
+GYM_LOCAL = 'local'
+GYM_OFFICE = 'office'
+GYM_FLOOR = 'floor'
+
+USER_DATA['aitan']['gyms'] = set([
+    GYM_LOCAL,
+    GYM_OFFICE,
+    GYM_FLOOR,
+])
+
+USER_DATA['aitan']['machines_by_gym'] = {
+    GYM_FLOOR: set([MACHINE_FLOOR]),
+    GYM_LOCAL: set([
+        MACHINE_SINGLE_CABLE,
+        MACHINE_DOUBLE_CABLE,
+        MACHINE_DUMBBELLS,
+        MACHINE_BARBELLS,
+        MACHINE_ROWER,
+        MACHINE_ELLIPTICAL,
+        MACHINE_TREADMILL,
+        MACHINE_PULLUP_BAR,
+        MACHINE_LAT_PULLDOWN,
+        MACHINE_HAMSTRING_CURL,
+        MACHINE_LEG_LIFT,
+        MACHINE_BACK_EXTENSION,
+        MACHINE_LEG_PRESS,
+        MACHINE_ABDOMINAL_BENCH,
+        MACHINE_DIPS,
+        MACHINE_ROW_MACHINE,
+        MACHINE_CHEST_PRESS,
+        MACHINE_SHOULDER_PRESS_MACHINE,
+        MACHINE_INCLINE_PRESS_MACHINE,
+        MACHINE_PEC_DECK,
+        MACHINE_RACK,
+        MACHINE_SMITH_MACHINE,
+        MACHINE_ASSISTED_PULLUP_DIP,
+        MACHINE_ROTARY_TORSO,
+        MACHINE_CALF_MACHINE,
+        MACHINE_PREACHER_CURL_BENCH,
+        MACHINE_AB_CRUNCH,
+        MACHINE_INCLINE_BENCH,
+        MACHINE_BENCH,
+        MACHINE_LATERAL_RAISE,
+        MACHINE_LEG_EXTENSION,
+        MACHINE_PULLDOWN_MACHINE,
+        MACHINE_TRX,
+    ]),
+    GYM_OFFICE: set([
+        MACHINE_SINGLE_CABLE,
+        MACHINE_DOUBLE_CABLE,
+        MACHINE_DUMBBELLS,
+        MACHINE_BARBELLS,
+        MACHINE_ROWER,
+        MACHINE_ELLIPTICAL,
+        MACHINE_TREADMILL,
+        MACHINE_PULLUP_BAR,
+        MACHINE_LAT_PULLDOWN,
+        MACHINE_HAMSTRING_CURL,
+        MACHINE_LEG_LIFT,
+        MACHINE_BACK_EXTENSION,
+        MACHINE_LEG_PRESS,
+        MACHINE_ABDOMINAL_BENCH,
+        MACHINE_DIPS,
+        MACHINE_ROW_MACHINE,
+        MACHINE_CHEST_PRESS,
+        MACHINE_SHOULDER_PRESS_MACHINE,
+        MACHINE_PEC_DECK,
+        MACHINE_RACK,
+        MACHINE_SMITH_MACHINE,
+        MACHINE_ASSISTED_PULLUP_DIP,
+        MACHINE_AB_CRUNCH,
+        MACHINE_INCLINE_BENCH,
+        MACHINE_BENCH,
+        MACHINE_LEG_EXTENSION,
+    ]),
+    'all': set([
+        MACHINE_SINGLE_CABLE,
+        MACHINE_DOUBLE_CABLE,
+        MACHINE_DUMBBELLS,
+        MACHINE_FLOOR,
+        MACHINE_BARBELLS,
+        MACHINE_ROWER,
+        MACHINE_ELLIPTICAL,
+        MACHINE_TREADMILL,
+        MACHINE_PULLUP_BAR,
+        MACHINE_LAT_PULLDOWN,
+        MACHINE_ROWING_CABLE,
+        MACHINE_HAMSTRING_CURL,
+        MACHINE_LEG_LIFT,
+        MACHINE_BACK_EXTENSION,
+        MACHINE_LEG_PRESS,
+        MACHINE_ABDOMINAL_BENCH,
+        MACHINE_DIPS,
+        MACHINE_ROW_MACHINE,
+        MACHINE_CHEST_PRESS,
+        MACHINE_SHOULDER_PRESS_MACHINE,
+        MACHINE_INCLINE_PRESS_MACHINE,
+        MACHINE_PEC_DECK,
+        MACHINE_RACK,
+        MACHINE_SMITH_MACHINE,
+        MACHINE_ASSISTED_PULLUP_DIP,
+        MACHINE_ROTARY_TORSO,
+        MACHINE_CALF_MACHINE,
+        MACHINE_PREACHER_CURL_BENCH,
+        MACHINE_AB_CRUNCH,
+        MACHINE_INCLINE_BENCH,
+        MACHINE_BENCH,
+        MACHINE_LATERAL_RAISE,
+        MACHINE_LEG_EXTENSION,
+        MACHINE_KETTLEBELLS,
+        MACHINE_RESISTANCE_BANDS,
+        MACHINE_PULLDOWN_MACHINE,
+        MACHINE_TRX,
+    ]),
+}
+
+USER_DATA['aitan']['muscle_group_importance'] = {}
+USER_DATA['aitan']['muscle_group_importance'][BICEPS] = 1.25
+USER_DATA['aitan']['muscle_group_importance'][MIDDLE_DELTS] = 1.25
+USER_DATA['aitan']['muscle_group_importance'][CALVES] = 1.35
