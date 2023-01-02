@@ -75,9 +75,11 @@ def send_pushover_notification(user_key, workout_plan):
     '''Sends the user a Pushover push notification with their new workout plan.
     '''
     spreadsheet_id = USER_DATA[user_key]['spreadsheet_id']
+    pushover_token = USER_DATA[user_key]['pushover_token']
+    pushover_user = USER_DATA[user_key]['pushover_user']
     message = (f'{workout_plan}\n\n'
                f'View & update history:\nhttps://docs.google.com/spreadsheets/d/{spreadsheet_id}')
-    url = (f'https://api.pushover.net/1/messages.json?token={PUSHOVER_TOKEN}&user={PUSHOVER_USER}'
+    url = (f'https://api.pushover.net/1/messages.json?token={pushover_token}&user={pushover_user}'
            f'&title={PUSHOVER_MESSAGE_TITLE}&message={message}')
     response = requests.post(url)
     print(response.json())
