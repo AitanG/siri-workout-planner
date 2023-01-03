@@ -97,7 +97,7 @@ EXERCISES_FOR_GLUTES = {
         'machines': set([MACHINE_DUMBBELLS]),
         'variations': set(['walking', 'in place', 'bulgarian split squat']),
     },
-    'pelvic thrusts': {
+    'hip thrusters': {
         'primary_muscle_groups': set([GLUTES, LOWER_BACK]),
         'secondary_muscle_groups': set([HAMSTRINGS, MIDDLE_BACK]),
         'machines': set([MACHINE_BENCH]),
@@ -274,7 +274,12 @@ EXERCISES_FOR_TRAPS = {
 
 # Pecs
 EXERCISES_FOR_PECS = {
-    'flys': {
+    'fly machine': {
+        'primary_muscle_groups': set([PECS, FRONT_DELTS]),
+        'secondary_muscle_groups': set([BICEPS]),
+        'machines': set([MACHINE_FLY_MACHINE]),
+    },
+    'cable flys': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([BICEPS]),
         'machines': set([MACHINE_DOUBLE_CABLE]),
@@ -316,7 +321,7 @@ EXERCISES_FOR_PECS = {
 
 # Lats
 EXERCISES_FOR_LATS = {
-    'lat pulldown': {
+    'lat pulldowns': {
         'primary_muscle_groups': set([LATS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_LAT_PULLDOWN]),
@@ -332,7 +337,6 @@ EXERCISES_FOR_LATS = {
         'secondary_muscle_groups': set([BICEPS]),
         'machines': set([MACHINE_PULLDOWN_MACHINE]),
     },
-    # arms out -> to side, too agro though
 }
 
 
@@ -347,6 +351,11 @@ EXERCISES_FOR_FRONT_DELTS = {
         'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_BARBELLS]),
+    },
+    'overhead press machine': {
+        'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'secondary_muscle_groups': set([TRICEPS]),
+        'machines': set([MACHINE_SHOULDER_PRESS_MACHINE]),
     },
 }
 
@@ -387,7 +396,7 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set([TRAPS]),
         'machines': set([MACHINE_DUMBBELLS]),
-        'variations': set(['together', 'alternating', 'reverse incline', 'incline']),
+        'variations': set(['together', 'alternating', 'reverse incline', 'incline', 'hammer']),
     },
     'cable bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
@@ -406,7 +415,6 @@ EXERCISES_FOR_BICEPS = {
         'secondary_muscle_groups': set([FRONT_ABS, LATS]),
         'machines': set([MACHINE_PULLUP_BAR]),
     },
-    # add hammer
 }
 
 

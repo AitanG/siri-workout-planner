@@ -5,7 +5,7 @@ from workout_planner.muscle_groups import *
 TEST_USER = 'aitan'
 
 USER_DATA = {
-    'aitan': {
+    TEST_USER: {
         'spreadsheet_id': '',
         'pushover_token': '',
         'pushover_user': '',
@@ -16,13 +16,13 @@ GYM_LOCAL = 'local'
 GYM_OFFICE = 'office'
 GYM_FLOOR = 'floor'
 
-USER_DATA['aitan']['gyms'] = set([
+USER_DATA[TEST_USER]['gyms'] = set([
     GYM_LOCAL,
     GYM_OFFICE,
     GYM_FLOOR,
 ])
 
-USER_DATA['aitan']['machines_by_gym'] = {
+USER_DATA[TEST_USER]['machines_by_gym'] = {
     GYM_FLOOR: set([MACHINE_FLOOR]),
     GYM_LOCAL: set([
         MACHINE_SINGLE_CABLE,
@@ -128,7 +128,7 @@ USER_DATA['aitan']['machines_by_gym'] = {
     ]),
 }
 
-USER_DATA['aitan']['muscle_group_importance'] = {}
-USER_DATA['aitan']['muscle_group_importance'][BICEPS] = 1.25
-USER_DATA['aitan']['muscle_group_importance'][MIDDLE_DELTS] = 1.25
-USER_DATA['aitan']['muscle_group_importance'][CALVES] = 1.35
+USER_DATA[TEST_USER]['muscle_group_importance'] = {}
+USER_DATA[TEST_USER]['muscle_group_importance'][BICEPS] = 1.25
+USER_DATA[TEST_USER]['muscle_group_importance'][MIDDLE_DELTS] = 1.25
+USER_DATA[TEST_USER]['muscle_group_importance'][CALVES] = 1.35
