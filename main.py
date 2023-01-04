@@ -113,15 +113,19 @@ def generate_power_sets(user_key, num_power_sets, gym):
     '''Defines high-level app functionality.
     '''
     fetch_workout_history(user_key)
-    result = get_power_sets(
-        user_key,
-        num_power_sets,
-        gym,
-        input_filename=f'{user_key}-history.txt',
-        output_filename=f'{user_key}-history.txt',
-    )
-    send_pushover_notification(user_key, result)
-    push_workout_history(user_key)
+    try:
+        result = get_power_sets(
+            user_key,
+            num_power_sets,
+            gym,
+            input_filename=f'{user_key}-history.txt',
+            output_filename=f'{user_key}-history.txt',
+        )
+    except Exception as e:
+        send_pushover_notification(user_key, f'Error:\n\n{e}')
+    else:
+        send_pushover_notification(user_key, result)
+        push_workout_history(user_key)
 
 
 @functions_framework.http
