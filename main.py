@@ -74,13 +74,10 @@ def fetch_workout_history(user_key):
 def send_pushover_notification(user_key, workout_plan):
     '''Sends the user a Pushover push notification with their new workout plan.
     '''
-    spreadsheet_id = USER_DATA[user_key]['spreadsheet_id']
     pushover_token = USER_DATA[user_key]['pushover_token']
     pushover_user = USER_DATA[user_key]['pushover_user']
-    message = (f'{workout_plan}\n\n'
-               f'View & update history:\nhttps://docs.google.com/spreadsheets/d/{spreadsheet_id}')
     url = (f'https://api.pushover.net/1/messages.json?token={pushover_token}&user={pushover_user}'
-           f'&title={PUSHOVER_MESSAGE_TITLE}&message={message}')
+           f'&title={PUSHOVER_MESSAGE_TITLE}&message={workout_plan}')
     response = requests.post(url)
     print(response.json())
 
@@ -89,7 +86,7 @@ def push_workout_history(user_key):
     '''Pushes updated workout history (now in local file) to Google Sheet.
     This can be edited later in Google Sheets UI to reflect any deviations from the plan.
     '''
-    creds = get_sheets_api_credentials()
+    creds = get_sheets_api_credentials(user_key)
     service = build('sheets', 'v4', credentials=creds)
     with open(f'{user_key}-history.txt', 'r', encoding='utf-8') as f:
         txt_raw = f.read()
