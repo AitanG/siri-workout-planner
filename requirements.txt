@@ -1,2 +1,4 @@
+cryptography
 functions-framework==3.*
+PyJWT
 requests
