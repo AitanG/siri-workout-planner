@@ -6,7 +6,8 @@ TEST_USER = 'aitan'
 
 USER_DATA = {
     TEST_USER: {
-        'spreadsheet_id': '',
+        'google_drive_file_id': '',
+        'google_drive_api_key': '',
         'pushover_token': '',
         'pushover_user': '',
     }

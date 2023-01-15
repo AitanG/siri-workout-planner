@@ -1,0 +1,4 @@
+*.json
+*.psd
+*.txt
+__pycache__

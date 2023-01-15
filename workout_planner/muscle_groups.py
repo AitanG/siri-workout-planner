@@ -1,7 +1,7 @@
 CARDIO = 'cardio'
 CALVES = 'calves'
 QUADS = 'quads'
-HAMSTRINGS = 'hams'
+HAMS = 'hams'
 GLUTES = 'glutes'
 FRONT_ABS = 'front abs'
 OBLIQUES = 'obliques'
@@ -22,7 +22,7 @@ MUSCLE_GROUPS = set([
 	CARDIO,
 	CALVES,
 	QUADS,
-	HAMSTRINGS,
+	HAMS,
 	GLUTES,
 	FRONT_ABS,
 	OBLIQUES,

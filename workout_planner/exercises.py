@@ -15,17 +15,17 @@ EXERCISES_FOR_CARDIO = {
     },
     'treadmill': {
         'primary_muscle_groups': set([CARDIO]),
-        'secondary_muscle_groups': set([CALVES, QUADS, HAMSTRINGS, GLUTES, LOWER_BACK]),
+        'secondary_muscle_groups': set([CALVES, QUADS, HAMS, GLUTES, LOWER_BACK]),
         'machines': set([MACHINE_TREADMILL]),
     },
     'elliptical': {
         'primary_muscle_groups': set([CARDIO]),
-        'secondary_muscle_groups': set([QUADS, HAMSTRINGS, GLUTES, LOWER_BACK]),
+        'secondary_muscle_groups': set([QUADS, HAMS, GLUTES, LOWER_BACK]),
         'machines': set([MACHINE_ELLIPTICAL]),
     },
     'burpees': {
         'primary_muscle_groups': set([CARDIO]),
-        'secondary_muscle_groups': set([QUADS, HAMSTRINGS, GLUTES, LOWER_BACK, PECS, TRICEPS, FRONT_DELTS, FRONT_ABS]),
+        'secondary_muscle_groups': set([QUADS, HAMS, GLUTES, LOWER_BACK, PECS, TRICEPS, FRONT_DELTS, FRONT_ABS]),
         'machines': set([MACHINE_FLOOR]),
     },
 }
@@ -63,15 +63,15 @@ EXERCISES_FOR_CALVES = {
 EXERCISES_FOR_QUADS = {
     'squats': {
         'primary_muscle_groups': set([QUADS, GLUTES, LOWER_BACK]),
-        'secondary_muscle_groups': set([MIDDLE_BACK, HAMSTRINGS]),
+        'secondary_muscle_groups': set([MIDDLE_BACK, HAMS]),
         'machines': set([MACHINE_BARBELLS, MACHINE_RACK, MACHINE_SMITH_MACHINE]),
     },
-    'leg press': {
+    'leg presses': {
         'primary_muscle_groups': set([QUADS, GLUTES]),
-        'secondary_muscle_groups': set([HAMSTRINGS]),
+        'secondary_muscle_groups': set([HAMS]),
         'machines': set([MACHINE_LEG_PRESS]),
     },
-    'leg extension': {
+    'leg extensions': {
         'primary_muscle_groups': set([QUADS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_LEG_EXTENSION]),
@@ -79,10 +79,10 @@ EXERCISES_FOR_QUADS = {
 }
 
 
-# Hamstrings
-EXERCISES_FOR_HAMSTRINGS = {
-    'hamstring curl': {
-        'primary_muscle_groups': set([HAMSTRINGS]),
+# Hams
+EXERCISES_FOR_HAMS = {
+    'hamstring curls': {
+        'primary_muscle_groups': set([HAMS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_HAMSTRING_CURL]),
     },
@@ -93,13 +93,13 @@ EXERCISES_FOR_HAMSTRINGS = {
 EXERCISES_FOR_GLUTES = {
     'lunges': {
         'primary_muscle_groups': set([GLUTES, QUADS]),
-        'secondary_muscle_groups': set([HAMSTRINGS, LOWER_BACK, CALVES]),
+        'secondary_muscle_groups': set([HAMS, LOWER_BACK, CALVES]),
         'machines': set([MACHINE_DUMBBELLS]),
         'variations': set(['walking', 'in place', 'bulgarian split squat']),
     },
     'hip thrusters': {
         'primary_muscle_groups': set([GLUTES, LOWER_BACK]),
-        'secondary_muscle_groups': set([HAMSTRINGS, MIDDLE_BACK]),
+        'secondary_muscle_groups': set([HAMS, MIDDLE_BACK]),
         'machines': set([MACHINE_BENCH]),
     },
 }
@@ -137,7 +137,7 @@ EXERCISES_FOR_FRONT_ABS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_FLOOR]),
     },
-    'leg lift machine': {
+    'leg lifts': {
         'primary_muscle_groups': set([FRONT_ABS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_LEG_LIFT]),
@@ -147,7 +147,7 @@ EXERCISES_FOR_FRONT_ABS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_FLOOR]),
     },
-    'ab crunch machine': {
+    'ab crunches': {
         'primary_muscle_groups': set([FRONT_ABS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_AB_CRUNCH]),
@@ -162,7 +162,7 @@ EXERCISES_FOR_FRONT_ABS = {
 
 # Obliques
 EXERCISES_FOR_OBLIQUES = {
-    'cable torso rotation': {
+    'cable torso rotations': {
         'primary_muscle_groups': set([OBLIQUES]),
         'secondary_muscle_groups': set([FRONT_ABS, LOWER_BACK, GLUTES]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
@@ -184,13 +184,13 @@ EXERCISES_FOR_OBLIQUES = {
 EXERCISES_FOR_LOWER_BACK = {
     'back extensions': {
         'primary_muscle_groups': set([LOWER_BACK, GLUTES]),
-        'secondary_muscle_groups': set([HAMSTRINGS]),
+        'secondary_muscle_groups': set([HAMS]),
         'machines': set([MACHINE_BACK_EXTENSION]),
         'variations': set(['without weight', 'with weight']),
     },
     'deadlifts': {
         'primary_muscle_groups': set([GLUTES, LOWER_BACK]),
-        'secondary_muscle_groups': set([HAMSTRINGS, MIDDLE_BACK]),
+        'secondary_muscle_groups': set([HAMS, MIDDLE_BACK]),
         'machines': set([MACHINE_BARBELLS]),
     },
 }
@@ -289,17 +289,22 @@ EXERCISES_FOR_PECS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_PEC_DECK]),
     },
-    'bench press': {
+    'bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_RACK]),
     },
-    'incline bench press': {
+    'bench press machine': {
+        'primary_muscle_groups': set([PECS, FRONT_DELTS]),
+        'secondary_muscle_groups': set([TRICEPS]),
+        'machines': set([MACHINE_BENCH_PRESS_MACHINE]),
+    },
+    'incline bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS, MIDDLE_DELTS]),
         'machines': set([MACHINE_INCLINE_BENCH]),
     },
-    'dumbbell bench press': {
+    'dumbbell bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_DUMBBELLS]),
@@ -310,7 +315,7 @@ EXERCISES_FOR_PECS = {
         'machines': set([MACHINE_FLOOR]),
         'variations': set(['diamond', 'clapping', 'normal']),
     },
-    'hollow plank press': {
+    'hollow plank presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS, FRONT_ABS, OBLIQUES]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_FLOOR]),
@@ -342,12 +347,12 @@ EXERCISES_FOR_LATS = {
 
 # Front delts
 EXERCISES_FOR_FRONT_DELTS = {
-    'overhead dumbbell press': {
+    'overhead dumbbell presses': {
         'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_DUMBBELLS]),
     },
-    'overhead barbell press': {
+    'overhead barbell presses': {
         'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_BARBELLS]),
@@ -362,7 +367,7 @@ EXERCISES_FOR_FRONT_DELTS = {
 
 # Middle delts
 EXERCISES_FOR_MIDDLE_DELTS = {
-    'dumbbell lateral raise': {
+    'dumbbell lateral raises': {
         'primary_muscle_groups': set([MIDDLE_DELTS]),
         'secondary_muscle_groups': set([FRONT_DELTS, TRAPS]),
         'machines': set([MACHINE_DUMBBELLS]),
@@ -404,11 +409,17 @@ EXERCISES_FOR_BICEPS = {
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['vertical—bar', 'reverse incline—bar', 'vertical—handles', 'reverse incline—handles']),
     },
-    'preacher curls': {
+    'barbell preacher curls': {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_PREACHER_CURL_BENCH]),
         'variations': set(['regular bar', 'EZ bar']),
+    },
+    'dumbbell preacher curls': {
+        'primary_muscle_groups': set([BICEPS]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_PREACHER_CURL_BENCH]),
+        'variations': set(['turned out', 'turned in', 'regular']),
     },
     'bicep pullups': {
         'primary_muscle_groups': set([BICEPS]),
@@ -425,7 +436,7 @@ EXERCISES_FOR_TRICEPS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
     },
-    'dumbbell overhead tricep extension': {
+    'dumbbell overhead tricep extensions': {
         'primary_muscle_groups': set([TRICEPS]),
         'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_DUMBBELLS]),
@@ -441,22 +452,21 @@ EXERCISES_FOR_TRICEPS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_DIPS]),
     },
-    'barbell tricep extension': {
+    'barbell tricep extensions': {
         'primary_muscle_groups': set([TRICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_BARBELLS]),
         'variations': set(['flat bench', 'incline bench', 'upright bench'])
     },
-    # add kickback
 }
 
 
 EXERCISES = {
-    # Excluding cardio because it's a separate thing / depends on energy levels
+    # Excluding cardio
     # **EXERCISES_FOR_CARDIO,
     **EXERCISES_FOR_CALVES,
     **EXERCISES_FOR_QUADS,
-    **EXERCISES_FOR_HAMSTRINGS,
+    **EXERCISES_FOR_HAMS,
     **EXERCISES_FOR_GLUTES,
     **EXERCISES_FOR_FRONT_ABS,
     **EXERCISES_FOR_OBLIQUES,
