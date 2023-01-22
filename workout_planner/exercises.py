@@ -407,7 +407,7 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
-        'variations': set(['vertical—bar', 'reverse incline—bar', 'vertical—handles', 'reverse incline—handles']),
+        'variations': set(['vertical--bar', 'reverse incline--bar', 'vertical--handles', 'reverse incline--handles']),
     },
     'barbell preacher curls': {
         'primary_muscle_groups': set([BICEPS]),

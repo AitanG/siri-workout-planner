@@ -3,7 +3,7 @@ import os.path
 import requests
 
 from workout_planner.get_power_sets import get_power_sets
-from workout_planner.user_data import USER_DATA
+from workout_planner.user_data import TEST_USER, USER_DATA
 
 import store
 

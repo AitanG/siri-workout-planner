@@ -10,7 +10,7 @@ from .user_data import TEST_USER, USER_DATA
 
 NUM_SETS_PER_POWER_SET = 3
 MACHINE_BOOST_CONSTANT = 1.15
-MAX_HISTORY_DAYS = 30
+MAX_HISTORY_DAYS = 30                              # max number of days to look back
 MAX_MUSCLE_GROUP_NEGLECTEDNESS = 3.0
 PRIMARY_WEIGHT_PERCENT = 2 / 3
 THIS_POWER_SET_MUSCLE_GROUP_NEGLECTEDNESS = 1 / 3
@@ -250,10 +250,14 @@ def read_history(txt_raw, now):
         return []
 
     return list(
-        filter(lambda tup: tup[0] > now - timedelta(days=MAX_HISTORY_DAYS),
-            map(lambda tup: (datetime.fromisoformat(tup[0]), tup[1], tup[2]),
-                map(lambda line: tuple(line.strip().split(',')),
-                    txt_raw.strip().split('\n')))))
+        map(
+            lambda tup: (datetime.fromisoformat(tup[0]), tup[1], tup[2]),
+            map(
+                lambda line: tuple(line.strip().split(',')),
+                txt_raw.strip().split('\n')
+            )
+        )
+    )
 
 
 def write_history(data):
@@ -275,14 +279,21 @@ def get_power_sets(user_key, num_power_sets, gym, input_filename='data.txt',
     output = ''
     with open(input_filename, 'r', encoding='utf-8') as f:
         history = read_history(f.read(), now)
+        relevant_history = list(
+            filter(
+                lambda tup: tup[0] > now - timedelta(days=10),
+                history
+            )
+        )
+        archive = history[len(relevant_history):]
         for _ in range(num_power_sets):
-            power_set = get_power_set(user_key, history, now, gym)
+            power_set = get_power_set(user_key, relevant_history, now, gym)
             output += '\n' + power_set
 
     if output_filename:
         with open(output_filename, 'w', encoding='utf-8') as f:
             f.seek(0)
-            f.write(write_history(history))
+            f.write(write_history(relevant_history + archive))
 
     return output.strip()
 
