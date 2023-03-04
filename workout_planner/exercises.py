@@ -113,13 +113,13 @@ EXERCISES_FOR_GLUTES = {
 EXERCISES_FOR_FRONT_ABS = {
     'decline situps': {
         'primary_muscle_groups': set([FRONT_ABS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([OBLIQUES]),
         'machines': set([MACHINE_ABDOMINAL_BENCH]),
         'variations': set(['without weight', 'with weight']),
     },
     'decline oblique situps': {
-        'primary_muscle_groups': set([FRONT_ABS]),
-        'secondary_muscle_groups': set([OBLIQUES]),
+        'primary_muscle_groups': set([FRONT_ABS, OBLIQUES]),
+        'secondary_muscle_groups': set(),
         'machines': set([MACHINE_ABDOMINAL_BENCH]),
     },
     'v-ups': {
@@ -223,11 +223,6 @@ EXERCISES_FOR_UPPER_BACK = {
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_REVERSE_FLY_MACHINE]),
     },
-    'reverse flys': {
-        'primary_muscle_groups': set([UPPER_BACK, BACK_DELTS]),
-        'secondary_muscle_groups': set([TRICEPS]),
-        'machines': set([MACHINE_DUMBBELLS]),
-    },
     'breaking chains': {
         'primary_muscle_groups': set([UPPER_BACK, BACK_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
@@ -239,8 +234,8 @@ EXERCISES_FOR_UPPER_BACK = {
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
     },
     'dumbbell rows': {
-        'primary_muscle_groups': set([UPPER_BACK, LATS, TRAPS]),
-        'secondary_muscle_groups': set([MIDDLE_BACK, LOWER_BACK]),
+        'primary_muscle_groups': set([UPPER_BACK, LATS, OBLIQUES]),
+        'secondary_muscle_groups': set([MIDDLE_BACK, LOWER_BACK, TRAPS]),
         'machines': set([MACHINE_DUMBBELLS]),
     },
     'incline TRX rows': {
@@ -265,8 +260,8 @@ EXERCISES_FOR_TRAPS = {
         'variations': set(['regular', 'incline']),
     },
     'face pulls': {
-        'primary_muscle_groups': set([TRAPS]),
-        'secondary_muscle_groups': set([BICEPS]),
+        'primary_muscle_groups': set([BACK_DELTS, UPPER_BACK]),
+        'secondary_muscle_groups': set([BICEPS, TRAPS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
     },
 }
@@ -333,8 +328,8 @@ EXERCISES_FOR_LATS = {
         'variations': set(['bar', 'double handle']),
     },
     'pullups': {
-        'primary_muscle_groups': set([LATS]),
-        'secondary_muscle_groups': set([BICEPS, FRONT_ABS]),
+        'primary_muscle_groups': set([LATS, BICEPS]),
+        'secondary_muscle_groups': set([FRONT_ABS]),
         'machines': set([MACHINE_PULLUP_BAR]),
     },
     'pulldowns': {
@@ -371,7 +366,7 @@ EXERCISES_FOR_MIDDLE_DELTS = {
         'primary_muscle_groups': set([MIDDLE_DELTS]),
         'secondary_muscle_groups': set([FRONT_DELTS, TRAPS]),
         'machines': set([MACHINE_DUMBBELLS]),
-        'variations': set(['thumbs out', 'thumbs down', 'thumbs 3/4 down']),
+        'variations': set(['thumbs out', 'thumbs down']),
     },
     'lateral raise machine': {
         'primary_muscle_groups': set([MIDDLE_DELTS]),
@@ -401,13 +396,13 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set([TRAPS]),
         'machines': set([MACHINE_DUMBBELLS]),
-        'variations': set(['together', 'alternating', 'reverse incline', 'incline', 'hammer']),
+        'variations': set(['together', 'alternating', 'incline', 'hammer']),
     },
     'cable bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
-        'variations': set(['vertical--bar', 'reverse incline--bar', 'vertical--handles', 'reverse incline--handles']),
+        'variations': set(['vertical--bar', 'incline--bar', 'vertical--handles', 'incline--handles']),
     },
     'barbell preacher curls': {
         'primary_muscle_groups': set([BICEPS]),
@@ -420,11 +415,6 @@ EXERCISES_FOR_BICEPS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_PREACHER_CURL_BENCH]),
         'variations': set(['turned out', 'turned in', 'regular']),
-    },
-    'bicep pullups': {
-        'primary_muscle_groups': set([BICEPS]),
-        'secondary_muscle_groups': set([FRONT_ABS, LATS]),
-        'machines': set([MACHINE_PULLUP_BAR]),
     },
 }
 
