@@ -3,3 +3,5 @@
 *.txt
 __pycache__
 workout_planner/user_data.py
+*.zip
+
