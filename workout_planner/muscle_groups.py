@@ -16,6 +16,8 @@ MIDDLE_DELTS = 'middle delts'
 BACK_DELTS = 'back delts'
 BICEPS = 'biceps'
 TRICEPS = 'triceps'
+HIP_ABDUCTORS = 'hip abductors'
+HIP_ADDUCTORS = 'hip adductors'
 FOREARMS = 'forearms'  # these aren't listed in any exercises
 
 MUSCLE_GROUPS = set([
@@ -37,5 +39,7 @@ MUSCLE_GROUPS = set([
 	BACK_DELTS,
 	BICEPS,
 	TRICEPS,
+	HIP_ABDUCTORS,
+	HIP_ADDUCTORS,
 	FOREARMS,
 ])
