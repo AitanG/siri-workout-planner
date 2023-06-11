@@ -177,6 +177,11 @@ EXERCISES_FOR_OBLIQUES = {
         'secondary_muscle_groups': set([LOWER_BACK]),
         'machines': set([MACHINE_FLOOR]),
     },
+    'resistance band torso rotations': {
+        'primary_muscle_groups': set([OBLIQUES]),
+        'secondary_muscle_groups': set([FRONT_ABS, LOWER_BACK, GLUTES]),
+        'machines': set([MACHINE_RESISTANCE_BANDS_WITH_ANCHOR]),
+    },
 }
 
 
@@ -233,10 +238,15 @@ EXERCISES_FOR_UPPER_BACK = {
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_DOUBLE_CABLE]),
     },
-    'stiff arm raises': {
+    'cable front raises': {
         'primary_muscle_groups': set([UPPER_BACK, FRONT_DELTS, TRAPS]),
         'secondary_muscle_groups': set([MIDDLE_BACK, MIDDLE_DELTS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
+    },
+    'dumbbell front raises': {
+        'primary_muscle_groups': set([UPPER_BACK, FRONT_DELTS, TRAPS]),
+        'secondary_muscle_groups': set([MIDDLE_BACK, MIDDLE_DELTS]),
+        'machines': set([MACHINE_DUMBBELLS]),
     },
     'dumbbell rows': {
         'primary_muscle_groups': set([UPPER_BACK, LATS, TRAPS]),
@@ -315,12 +325,12 @@ EXERCISES_FOR_PECS = {
         'machines': set([MACHINE_FLOOR]),
         'variations': set(['diamond', 'clapping', 'normal']),
     },
-    'hollow plank presses': {
-        'primary_muscle_groups': set([PECS, FRONT_DELTS, FRONT_ABS, OBLIQUES]),
-        'secondary_muscle_groups': set([TRICEPS]),
-        'machines': set([MACHINE_FLOOR]),
-        'variations': set(),
-    },
+    # 'hollow plank presses': {
+    #     'primary_muscle_groups': set([PECS, FRONT_DELTS, FRONT_ABS, OBLIQUES]),
+    #     'secondary_muscle_groups': set([TRICEPS]),
+    #     'machines': set([MACHINE_FLOOR]),
+    #     'variations': set(),
+    # },
 }
 
 
@@ -333,8 +343,8 @@ EXERCISES_FOR_LATS = {
         'variations': set(['bar', 'double handle']),
     },
     'pullups': {
-        'primary_muscle_groups': set([LATS]),
-        'secondary_muscle_groups': set([BICEPS, FRONT_ABS]),
+        'primary_muscle_groups': set([BICEPS, LATS]),
+        'secondary_muscle_groups': set([FRONT_ABS]),
         'machines': set([MACHINE_PULLUP_BAR]),
     },
     'pulldowns': {
@@ -348,19 +358,24 @@ EXERCISES_FOR_LATS = {
 # Front delts
 EXERCISES_FOR_FRONT_DELTS = {
     'overhead dumbbell presses': {
-        'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'primary_muscle_groups': set([FRONT_DELTS, TRAPS, MIDDLE_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_DUMBBELLS]),
     },
     'overhead barbell presses': {
-        'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'primary_muscle_groups': set([FRONT_DELTS, TRAPS, MIDDLE_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_BARBELLS]),
     },
     'overhead press machine': {
-        'primary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'primary_muscle_groups': set([FRONT_DELTS, TRAPS, MIDDLE_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_SHOULDER_PRESS_MACHINE]),
+    },
+    'resistance band overhead presses': {
+        'primary_muscle_groups': set([FRONT_DELTS, TRAPS, MIDDLE_DELTS]),
+        'secondary_muscle_groups': set([TRICEPS]),
+        'machines': set([MACHINE_RESISTANCE_BANDS]),
     },
 }
 
@@ -368,15 +383,20 @@ EXERCISES_FOR_FRONT_DELTS = {
 # Middle delts
 EXERCISES_FOR_MIDDLE_DELTS = {
     'dumbbell lateral raises': {
-        'primary_muscle_groups': set([MIDDLE_DELTS]),
-        'secondary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'primary_muscle_groups': set([MIDDLE_DELTS, TRAPS]),
+        'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_DUMBBELLS]),
         'variations': set(['thumbs out', 'thumbs down', 'thumbs 3/4 down']),
     },
     'lateral raise machine': {
-        'primary_muscle_groups': set([MIDDLE_DELTS]),
-        'secondary_muscle_groups': set([FRONT_DELTS, TRAPS]),
+        'primary_muscle_groups': set([MIDDLE_DELTS, TRAPS]),
+        'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_LATERAL_RAISE]),
+    },
+    'resistance band lateral raises': {
+        'primary_muscle_groups': set([MIDDLE_DELTS, TRAPS]),
+        'secondary_muscle_groups': set([FRONT_DELTS]),
+        'machines': set([MACHINE_RESISTANCE_BANDS]),
     },
 }
 
@@ -384,9 +404,14 @@ EXERCISES_FOR_MIDDLE_DELTS = {
 # Back delts
 EXERCISES_FOR_BACK_DELTS = {
     'cable delts': {
-        'primary_muscle_groups': set([BACK_DELTS]),
+        'primary_muscle_groups': set([BACK_DELTS, MIDDLE_DELTS]),
         'secondary_muscle_groups': set([UPPER_BACK]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
+    },
+    'resistance band delts': {
+        'primary_muscle_groups': set([BACK_DELTS]),
+        'secondary_muscle_groups': set([UPPER_BACK]),
+        'machines': set([MACHINE_RESISTANCE_BANDS_WITH_ANCHOR]),
     },
 }
 
@@ -399,13 +424,13 @@ EXERCISES_FOR_BACK_DELTS = {
 EXERCISES_FOR_BICEPS = {
     'dumbbell bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
-        'secondary_muscle_groups': set([TRAPS]),
+        'secondary_muscle_groups': set([TRAPS, FRONT_DELTS]),
         'machines': set([MACHINE_DUMBBELLS]),
         'variations': set(['together', 'alternating', 'reverse incline', 'incline', 'hammer']),
     },
     'cable bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['vertical--bar', 'reverse incline--bar', 'vertical--handles', 'reverse incline--handles']),
     },
@@ -421,10 +446,10 @@ EXERCISES_FOR_BICEPS = {
         'machines': set([MACHINE_PREACHER_CURL_BENCH]),
         'variations': set(['turned out', 'turned in', 'regular']),
     },
-    'bicep pullups': {
+    'resistance band bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
-        'secondary_muscle_groups': set([FRONT_ABS, LATS]),
-        'machines': set([MACHINE_PULLUP_BAR]),
+        'secondary_muscle_groups': set([TRAPS, FRONT_DELTS]),
+        'machines': set([MACHINE_RESISTANCE_BANDS]),
     },
 }
 
@@ -457,6 +482,11 @@ EXERCISES_FOR_TRICEPS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_BARBELLS]),
         'variations': set(['flat bench', 'incline bench', 'upright bench'])
+    },
+    'resistance band triceps': {
+        'primary_muscle_groups': set([TRICEPS]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_RESISTANCE_BANDS_WITH_ANCHOR]),
     },
 }
 
