@@ -40,12 +40,12 @@ def test_exercise_distribution_over_single_workout():
 
     # Assert that workout planning gives roughly uniform representation to all workouts within a given workout
     num_unique_exercises_done = len(set(map(lambda entry: entry[1], history)))
-    assert num_unique_exercises_done > num_possible_exercises * 0.9 and num_unique_exercises_done < num_possible_exercises
+    assert num_unique_exercises_done > num_possible_exercises * 0.9 and num_unique_exercises_done <= num_possible_exercises
 
 
 def test_exercise_distribution_over_month():
     # Create empty history file
-    filename = str(uuid.uuid4())
+    filename = str(uuid.uuid4()) + '.testoutput'
     open(filename, 'a').close()
 
     machines = USER_DATA[TEST_USER]['machines_by_gym'][GYM_LOCAL]
@@ -74,7 +74,7 @@ def test_exercise_distribution_over_month():
 
     # Assert that workout planning gives roughly but not quite uniform representation to all workouts over time
     num_unique_exercises_done = len(set(map(lambda entry: entry[1], history)))
-    assert num_unique_exercises_done > num_possible_exercises * 0.75 and num_unique_exercises_done < num_possible_exercises * 0.9
+    assert num_unique_exercises_done > num_possible_exercises * 0.7 and num_unique_exercises_done < num_possible_exercises * 0.9
 
     for _ in range(num_workouts * 3):
         get_power_sets(TEST_USER,

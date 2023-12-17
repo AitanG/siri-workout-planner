@@ -5,3 +5,4 @@ __pycache__
 workout_planner/user_data.py
 *.zip
 .DS_Store
+*.testoutput

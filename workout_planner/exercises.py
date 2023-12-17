@@ -62,12 +62,12 @@ EXERCISES_FOR_CALVES = {
 # Quads
 EXERCISES_FOR_QUADS = {
     'squats': {
-        'primary_muscle_groups': set([QUADS, GLUTES, LOWER_BACK]),
+        'primary_muscle_groups': set([QUADS, GLUTES, LOWER_BACK, HIP_ADDUCTORS]),
         'secondary_muscle_groups': set([MIDDLE_BACK, HAMS]),
         'machines': set([MACHINE_BARBELLS, MACHINE_RACK, MACHINE_SMITH_MACHINE, MACHINE_FLOOR]),
     },
     'leg presses': {
-        'primary_muscle_groups': set([QUADS, GLUTES]),
+        'primary_muscle_groups': set([QUADS, GLUTES, HIP_ADDUCTORS]),
         'secondary_muscle_groups': set([HAMS]),
         'machines': set([MACHINE_LEG_PRESS]),
     },
@@ -77,7 +77,7 @@ EXERCISES_FOR_QUADS = {
         'machines': set([MACHINE_LEG_EXTENSION]),
     },
     'jump squats': {
-        'primary_muscle_groups': set([QUADS, GLUTES]),
+        'primary_muscle_groups': set([QUADS, GLUTES, HIP_ADDUCTORS]),
         'secondary_muscle_groups': set([CALVES]),
         'machines': set([MACHINE_FLOOR]),
     },
@@ -97,13 +97,13 @@ EXERCISES_FOR_HAMS = {
 # Glutes
 EXERCISES_FOR_GLUTES = {
     'lunges': {
-        'primary_muscle_groups': set([GLUTES, QUADS]),
+        'primary_muscle_groups': set([GLUTES, QUADS, HIP_ADDUCTORS]),
         'secondary_muscle_groups': set([HAMS, LOWER_BACK, CALVES]),
         'machines': set([MACHINE_DUMBBELLS, MACHINE_FLOOR]),
         'variations': set(['walking', 'in place']),
     },
     'bulgarian split squats': {
-        'primary_muscle_groups': set([GLUTES, QUADS]),
+        'primary_muscle_groups': set([GLUTES, QUADS, HIP_ADDUCTORS]),
         'secondary_muscle_groups': set([HAMS, LOWER_BACK, CALVES]),
         'machines': set([MACHINE_PLATFORM]),
     },
@@ -420,7 +420,7 @@ EXERCISES_FOR_PECS = {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
         'machines': set([MACHINE_DUMBBELLS]),
-        'variations': set(['flat, guillotine', 'incline, guillotine', 'flat, neutral', 'incline, neutral', 'flat, squeeze', 'incline, squeeze']),
+        'variations': set(['flat - guillotine', 'incline - guillotine', 'flat - neutral', 'incline - neutral', 'flat - squeeze', 'incline - squeeze']),
     },
     'pushups': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
@@ -559,13 +559,13 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set([TRAPS, FRONT_DELTS]),
         'machines': set([MACHINE_DUMBBELLS]),
-        'variations': set(['regular', 'hammer', 'reverse', 'regular, incline', 'hammer, incline', 'reverse, incline']),
+        'variations': set(['regular', 'hammer', 'reverse', 'regular - incline', 'hammer - incline', 'reverse - incline']),
     },
     'cable bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
-        'variations': set(['vertical, bar', 'incline, bar', 'vertical, handles', 'incline, handles']),
+        'variations': set(['vertical - bar', 'incline - bar', 'vertical - handles - regular', 'vertical - handles - hammer', 'vertical - handles - reverse', 'incline - handles - regular', 'incline - handles - hammer', 'incline - handles - reverse']),
     },
     'cable bayesian bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
@@ -577,7 +577,7 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set([BACK_DELTS, MIDDLE_DELTS, PECS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
-        'variations': set(['horizontal, bar', 'high, bar', 'horizontal, handles, regular', 'high, handles, regular', 'horizontal, handles, hammer', 'high, handles, hammer', 'horizontal, handles, reverse', 'high, handles, reverse']),
+        'variations': set(['horizontal - bar', 'high - bar', 'horizontal - handles - regular', 'high - handles - regular', 'horizontal - handles - hammer', 'high - handles - hammer', 'horizontal - handles - reverse', 'high - handles - reverse']),
     },
     'barbell preacher curls': {
         'primary_muscle_groups': set([BICEPS]),
@@ -607,7 +607,7 @@ EXERCISES_FOR_BICEPS = {
         'primary_muscle_groups': set([BICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_RESISTANCE_BANDS_WITH_ANCHOR]),
-        'variations': set(['horizontal, regular', 'horizontal, hammer', 'horizontal, reverse', 'high, regular', 'high, hammer', 'high, reverse']),
+        'variations': set(['horizontal - regular', 'horizontal - hammer', 'horizontal - reverse', 'high - regular', 'high - hammer', 'high - reverse']),
     },
 }
 
