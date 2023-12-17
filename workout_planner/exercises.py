@@ -76,6 +76,11 @@ EXERCISES_FOR_QUADS = {
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_LEG_EXTENSION]),
     },
+    'jump squats': {
+        'primary_muscle_groups': set([QUADS, GLUTES]),
+        'secondary_muscle_groups': set([CALVES]),
+        'machines': set([MACHINE_FLOOR]),
+    },
 }
 
 
@@ -115,7 +120,7 @@ EXERCISES_FOR_GLUTES = {
     },
     'step ups': {
         'primary_muscle_groups': set([GLUTES, QUADS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([CALVES]),
         'machines': set([MACHINE_PLATFORM]),
     },
 }
@@ -170,9 +175,21 @@ EXERCISES_FOR_FRONT_ABS = {
     },
     'planks': {
         'primary_muscle_groups': set([FRONT_ABS]),
-        'secondary_muscle_groups': set([]),
+        'secondary_muscle_groups': set(),
         'machines': set([MACHINE_FLOOR]),
         'variations': set(['regular', 'long lever']),
+    },
+    'plank jacks': {
+        'primary_muscle_groups': set([FRONT_ABS]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_FLOOR]),
+        'variations': set(),
+    },
+    'mountain climbers': {
+        'primary_muscle_groups': set([FRONT_ABS]),
+        'secondary_muscle_groups': set([OBLIQUES]),
+        'machines': set([MACHINE_FLOOR]),
+        'variations': set(),
     },
 }
 
@@ -193,7 +210,7 @@ EXERCISES_FOR_OBLIQUES = {
         'primary_muscle_groups': set([OBLIQUES]),
         'secondary_muscle_groups': set([LOWER_BACK]),
         'machines': set([MACHINE_FLOOR]),
-        'variations': set(['regular', 'up-and-down', 'reach through']),
+        'variations': set(['regular', 'reach through']),
     },
     'resistance band torso rotations': {
         'primary_muscle_groups': set([OBLIQUES]),
@@ -202,7 +219,7 @@ EXERCISES_FOR_OBLIQUES = {
     },
     'dumbbell side bends': {
         'primary_muscle_groups': set([OBLIQUES]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([LOWER_BACK]),
         'machines': set([MACHINE_DUMBBELLS]),
     },
     'russian twists': {
@@ -349,7 +366,7 @@ EXERCISES_FOR_TRAPS = {
     },
     'cable 30 degree shrugs': {
         'primary_muscle_groups': set([TRAPS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([UPPER_BACK]),
         'machines': set([MACHINE_DOUBLE_CABLE]),
     },
     'band shrugs': {
@@ -519,8 +536,8 @@ EXERCISES_FOR_MIDDLE_DELTS = {
 # Back delts
 EXERCISES_FOR_BACK_DELTS = {
     'cable rear delt flys': {
-        'primary_muscle_groups': set([BACK_DELTS, MIDDLE_DELTS]),
-        'secondary_muscle_groups': set([UPPER_BACK]),
+        'primary_muscle_groups': set([UPPER_BACK, BACK_DELTS, MIDDLE_DELTS]),
+        'secondary_muscle_groups': set(),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['high', 'level', 'low']),
     },
@@ -558,7 +575,7 @@ EXERCISES_FOR_BICEPS = {
     },
     'cable high bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([BACK_DELTS, MIDDLE_DELTS, PECS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['horizontal, bar', 'high, bar', 'horizontal, handles, regular', 'high, handles, regular', 'horizontal, handles, hammer', 'high, handles, hammer', 'horizontal, handles, reverse', 'high, handles, reverse']),
     },
@@ -599,9 +616,15 @@ EXERCISES_FOR_BICEPS = {
 EXERCISES_FOR_TRICEPS = {
     'cable triceps': {
         'primary_muscle_groups': set([TRICEPS]),
-        'secondary_muscle_groups': set(),
+        'secondary_muscle_groups': set([FRONT_ABS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['rope', 'handle']),
+    },
+    'single handle cable triceps': {
+        'primary_muscle_groups': set([TRICEPS]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
+        'variations': set(),
     },
     'cable skull crushers': {
         'primary_muscle_groups': set([TRICEPS]),

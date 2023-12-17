@@ -18,7 +18,7 @@ BICEPS = 'biceps'
 TRICEPS = 'triceps'
 HIP_ABDUCTORS = 'hip abductors'
 HIP_ADDUCTORS = 'hip adductors'
-FOREARMS = 'forearms'  # these aren't listed in any exercises
+FOREARMS = 'forearms'
 
 MUSCLE_GROUPS = set([
 	CARDIO,
