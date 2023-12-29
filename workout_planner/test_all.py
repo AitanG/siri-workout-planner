@@ -108,9 +108,8 @@ def test_muscle_group_distribution():
 
     muscle_group_utilization = {muscle_group: 0.0 for muscle_group in MUSCLE_GROUPS}
 
-    # Remove cardio and forearms from calculation because these are intentionally excluded from workout plans
+    # Remove cardio from calculation because these are intentionally excluded from workout plans
     del muscle_group_utilization[CARDIO]
-    del muscle_group_utilization[FOREARMS]
 
     for _ in range(50):
         output = get_power_sets(TEST_USER,

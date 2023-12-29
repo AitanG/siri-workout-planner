@@ -697,6 +697,15 @@ EXERCISES_FOR_HIP_ADDUCTORS = {
     },
 }
 
+EXERCISES_FOR_FOREARMS = {
+    'wrist extensions': {
+        'primary_muscle_groups': set([FOREARMS]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_DUMBBELLS]),
+        'variations': set(['regular', 'neutral grip'])
+    },
+}
+
 
 EXERCISES = {
     # Excluding cardio
@@ -720,4 +729,5 @@ EXERCISES = {
     **EXERCISES_FOR_TRICEPS,
     **EXERCISES_FOR_HIP_ADDUCTORS,
     **EXERCISES_FOR_HIP_ABDUCTORS,
+    **EXERCISES_FOR_FOREARMS,
 }
