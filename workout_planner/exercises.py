@@ -51,6 +51,11 @@ EXERCISES_FOR_CALVES = {
         'machines': set([MACHINE_DUMBBELLS]),
         'variations': set(['wide', 'narrow']),
     },
+    'seated calf raises': {
+        'primary_muscle_groups': set([CALVES]),
+        'secondary_muscle_groups': set(),
+        'machines': set([MACHINE_SEATED_CALF_RAISE_MACHINE]),
+    },
     'walking calf raises': {
         'primary_muscle_groups': set([CALVES]),
         'secondary_muscle_groups': set(),
@@ -183,13 +188,11 @@ EXERCISES_FOR_FRONT_ABS = {
         'primary_muscle_groups': set([FRONT_ABS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_FLOOR]),
-        'variations': set(),
     },
     'mountain climbers': {
         'primary_muscle_groups': set([FRONT_ABS]),
         'secondary_muscle_groups': set([OBLIQUES]),
         'machines': set([MACHINE_FLOOR]),
-        'variations': set(),
     },
 }
 
@@ -237,6 +240,11 @@ EXERCISES_FOR_LOWER_BACK = {
         'secondary_muscle_groups': set([HAMS]),
         'machines': set([MACHINE_BACK_EXTENSION]),
         'variations': set(['without weight', 'with weight']),
+    },
+    'back extension machine': {
+        'primary_muscle_groups': set([LOWER_BACK]),
+        'secondary_muscle_groups': set([GLUTES]),
+        'machines': set([MACHINE_BACK_EXTENSION_MACHINE]),
     },
     'deadlifts': {
         'primary_muscle_groups': set([GLUTES, LOWER_BACK]),
@@ -336,7 +344,7 @@ EXERCISES_FOR_TRAPS = {
     'shrugs': {
         'primary_muscle_groups': set([TRAPS]),
         'secondary_muscle_groups': set(),
-        'machines': set([MACHINE_DUMBBELLS, MACHINE_BARBELLS]),
+        'machines': set([MACHINE_DUMBBELLS, MACHINE_BARBELLS, MACHINE_TRAP_BAR]),
         'variations': set(['regular', 'incline']),
     },
     'face pulls': {
@@ -403,18 +411,23 @@ EXERCISES_FOR_PECS = {
     'bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
-        'machines': set([MACHINE_RACK]),
+        'machines': set([MACHINE_RACK, MACHINE_SMITH_MACHINE]),
         'variations': set(['regular', 'close grip']),
     },
     'bench press machine': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS]),
-        'machines': set([MACHINE_BENCH_PRESS_MACHINE]),
+        'machines': set([MACHINE_CHEST_PRESS_MACHINE]),
     },
     'incline bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
         'secondary_muscle_groups': set([TRICEPS, MIDDLE_DELTS]),
         'machines': set([MACHINE_INCLINE_BENCH]),
+    },
+    'incline bench press machine': {
+        'primary_muscle_groups': set([PECS, FRONT_DELTS]),
+        'secondary_muscle_groups': set([TRICEPS, MIDDLE_DELTS]),
+        'machines': set([MACHINE_INCLINE_BENCH_PRESS_MACHINE]),
     },
     'dumbbell bench presses': {
         'primary_muscle_groups': set([PECS, FRONT_DELTS]),
@@ -442,7 +455,6 @@ EXERCISES_FOR_PECS = {
     #     'primary_muscle_groups': set([PECS, FRONT_DELTS, FRONT_ABS, OBLIQUES]),
     #     'secondary_muscle_groups': set([TRICEPS]),
     #     'machines': set([MACHINE_FLOOR]),
-    #     'variations': set(),
     # },
 }
 
@@ -528,7 +540,6 @@ EXERCISES_FOR_MIDDLE_DELTS = {
         'primary_muscle_groups': set([MIDDLE_DELTS, TRAPS]),
         'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_RESISTANCE_BANDS_WITH_ANCHOR]),
-        'variations': set(),
     },
 }
 
@@ -566,6 +577,11 @@ EXERCISES_FOR_BICEPS = {
         'secondary_muscle_groups': set([FRONT_DELTS]),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
         'variations': set(['vertical - bar', 'incline - bar', 'vertical - handles - regular', 'vertical - handles - hammer', 'vertical - handles - reverse', 'incline - handles - regular', 'incline - handles - hammer', 'incline - handles - reverse']),
+    },
+    'bicep curl machine': {
+        'primary_muscle_groups': set([BICEPS]),
+        'secondary_muscle_groups': set([FRONT_DELTS]),
+        'machines': set([MACHINE_BICEP_CURL_MACHINE]),
     },
     'cable bayesian bicep curls': {
         'primary_muscle_groups': set([BICEPS]),
@@ -624,7 +640,6 @@ EXERCISES_FOR_TRICEPS = {
         'primary_muscle_groups': set([TRICEPS]),
         'secondary_muscle_groups': set(),
         'machines': set([MACHINE_SINGLE_CABLE, MACHINE_DOUBLE_CABLE]),
-        'variations': set(),
     },
     'cable skull crushers': {
         'primary_muscle_groups': set([TRICEPS]),
