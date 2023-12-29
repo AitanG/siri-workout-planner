@@ -21,7 +21,7 @@ def send_pushover_notification(user_key, workout_plan):
     response = requests.post(url)
 
 
-def generate_power_sets(user_key, num_power_sets, gym):
+def generate_power_sets(user_key, num_power_sets, gym, skip_legs):
     '''Defines high-level app functionality.
     '''
     store.get_history(user_key)
@@ -30,6 +30,7 @@ def generate_power_sets(user_key, num_power_sets, gym):
             user_key,
             num_power_sets,
             gym,
+            skip_legs,
             input_filename=f'{user_key}-history.txt',
             output_filename=f'{user_key}-history.txt',
         )
@@ -59,7 +60,12 @@ def hello_http(request):
     num_power_sets = int(request_args.get('num_power_sets', 2))
     gym = request_args.get('gym', 'office').lower()
 
-    generate_power_sets(user_key, num_power_sets, gym)
+    # Option to skip legs in case of unplanned cardio
+    skip_legs = request_args.get('skip_legs').lower()
+    if skip_legs not in ('yes', 'y', 'true'):
+        skip_legs = False
+
+    generate_power_sets(user_key, num_power_sets, gym, skip_legs)
 
     return 'Success!'
 

@@ -28,6 +28,7 @@ def test_exercise_distribution_over_single_workout():
     get_power_sets(TEST_USER,
                    num_power_sets=num_power_sets,
                    gym=GYM_LOCAL,
+                   skip_legs=False,
                    input_filename=filename,
                    output_filename=filename,
                    now=datetime.utcnow())
@@ -63,6 +64,7 @@ def test_exercise_distribution_over_month():
         get_power_sets(TEST_USER,
                        num_power_sets=2,
                        gym=GYM_LOCAL,
+                       skip_legs=False,
                        input_filename=filename,
                        output_filename=filename,
                        now=now)
@@ -80,6 +82,7 @@ def test_exercise_distribution_over_month():
         get_power_sets(TEST_USER,
                        num_power_sets=3,
                        gym=GYM_LOCAL,
+                       skip_legs=False,
                        input_filename=filename,
                        output_filename=filename,
                        now=now)
@@ -113,6 +116,7 @@ def test_muscle_group_distribution():
         output = get_power_sets(TEST_USER,
                                 num_power_sets=2,
                                 gym=GYM_LOCAL,
+                                skip_legs=False,
                                 input_filename=filename,
                                 output_filename=filename,
                                 now=now)
@@ -151,6 +155,7 @@ def test_empty_history():
     get_power_sets(TEST_USER,
                    num_power_sets=num_power_sets,
                    gym=GYM_LOCAL,
+                   skip_legs=False,
                    input_filename=filename,
                    output_filename=filename,
                    now=datetime.utcnow())
@@ -172,12 +177,34 @@ def test_performance():
     get_power_sets(TEST_USER,
                    num_power_sets=2,
                    gym=GYM_LOCAL,
+                   skip_legs=False,
                    input_filename='test_performance_input.txt',
                    output_filename='test_performance_output.txt',
                    now=datetime.utcnow())
 
     # Assert scoring given a long, full workout log takes under 2s
     assert time.time() - start_time < 2.0
+
+
+def test_skip_legs():
+    output = get_power_sets(TEST_USER,
+                   num_power_sets=100,
+                   gym=GYM_LOCAL,
+                   skip_legs=True,
+                   input_filename='test_performance_input.txt',
+                   output_filename='test_performance_output.txt',
+                   now=datetime.utcnow())
+
+    example_leg_workouts = (
+        'leg presses',
+        'squats',
+        'leg extensions',
+        'deadlifts',
+        'lunges',
+    )
+
+    for workout in example_leg_workouts:
+        assert workout not in output
 
 
 def test_partition_history():

@@ -177,7 +177,7 @@ def select_variation(exercise, possible_variations, history):
     return ''
 
 
-def get_set(user_key, history, now, set_index, gym):
+def get_set(user_key, history, now, set_index, gym, skip_legs):
     '''Computes the single next set to do using a greedy approach.
 
     We essentially want to pick the best exercise to do next given:
@@ -200,6 +200,9 @@ def get_set(user_key, history, now, set_index, gym):
         if len(exercise_details['machines'].intersection(machines)) == 0:
             continue
 
+        if skip_legs and len(exercise_details['primary_muscle_groups'].intersection(LEG_MUSCLE_GROUPS)) > 0:
+            continue
+
         score = get_score(user_key, exercise_name, exercise_details, history, now, set_index)
         scores.append((round(score, 1), exercise_name))
         if score > max_score:
@@ -214,7 +217,7 @@ def get_set(user_key, history, now, set_index, gym):
     return max_score_exercise_name, variation
 
 
-def get_power_set(user_key, history, now, gym):
+def get_power_set(user_key, history, now, gym, skip_legs):
     '''Computes next power set to assign at `gym` based on history.
 
     A power set consists of >1 different sets done at least twice.
@@ -223,7 +226,8 @@ def get_power_set(user_key, history, now, gym):
     '''
     output = ''
     for set_index in range(NUM_SETS_PER_POWER_SET):
-        exercise, variation = get_set(user_key, history, now, set_index, gym)
+        exercise, variation = get_set(
+            user_key, history, now, set_index, gym, skip_legs)
         if variation:
             output += f'\n{exercise} ({variation})'
         else:
@@ -272,8 +276,9 @@ def write_history(data):
         for timestamp, exercise, variation in data])
 
 
-def get_power_sets(user_key, num_power_sets, gym, input_filename='data.txt',
-                   output_filename='data.txt', now=datetime.utcnow()):
+def get_power_sets(user_key, num_power_sets, gym, skip_legs,
+                   input_filename='data.txt', output_filename='data.txt',
+                   now=datetime.utcnow()):
     '''Computes next `num_power_sets` to assign at `gym` based on history TXT.
     Updates history and returns human-readable workout plan.
     '''
@@ -288,7 +293,8 @@ def get_power_sets(user_key, num_power_sets, gym, input_filename='data.txt',
         )
         archive = history[len(relevant_history):]
         for _ in range(num_power_sets):
-            power_set = get_power_set(user_key, relevant_history, now, gym)
+            power_set = get_power_set(
+                user_key, relevant_history, now, gym, skip_legs)
             output += '\n' + power_set
 
     if output_filename:
