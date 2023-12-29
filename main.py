@@ -61,9 +61,8 @@ def hello_http(request):
     gym = request_args.get('gym', 'office').lower()
 
     # Option to skip legs in case of unplanned cardio
-    skip_legs = request_args.get('skip_legs').lower()
-    if skip_legs not in ('yes', 'y', 'true'):
-        skip_legs = False
+    skip_legs = request_args.get('skip_legs', '').lower()
+    skip_legs = skip_legs in ('yes', 'y', 'true')
 
     generate_power_sets(user_key, num_power_sets, gym, skip_legs)
 
