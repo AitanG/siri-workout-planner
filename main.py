@@ -34,11 +34,16 @@ def generate_power_sets(user_key, num_power_sets, gym, skip_legs):
             input_filename=f'{user_key}-history.txt',
             output_filename=f'{user_key}-history.txt',
         )
+
+        response = store.update_history(user_key)
+        if response.status_code >= 300:
+            if 'beyond the last requested row of' in response.text:
+                raise Exception(f'sheet is full, need to add empty rows at the bottom of the sheet')
+            raise Exception(f'got {response.status_code} when trying to update history: {response.text}')
     except Exception as e:
         send_pushover_notification(user_key, f'Error:\n\n{e}')
     else:
         send_pushover_notification(user_key, result)
-        store.update_history(user_key)
 
 
 @functions_framework.http
