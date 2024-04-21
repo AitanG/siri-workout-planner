@@ -234,7 +234,7 @@ def get_power_set(user_key, history, now, gym, skip_legs):
             output += f'\n{exercise}'
 
         # For now, print muscle groups in case there are errors
-        output += f'\n  1) {", ".join(EXERCISES[exercise]["primary_muscle_groups"])}'
+        output += f'\n  1) {", ".join(EXERCISES[exercise]["primary_muscle_groups"])}\n'
         if len(EXERCISES[exercise]["secondary_muscle_groups"]) > 0:
             output += f'\n  2) {", ".join(EXERCISES[exercise]["secondary_muscle_groups"])}\n'
 
